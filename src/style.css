@@ -1,0 +1,84 @@
+:root {
+  --bg-dark: #121212;
+  --bg-light: #f5f5f5;
+  --detail-color: #df4464;
+  --font-dark: #e0e0e0;
+  --font-light: #333333;
+  --notification-color: #2ecc71;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  text-decoration: none;
+  list-style: none;
+}
+
+body {
+  background-color: var(--bg-light);
+  color: var(--font-light);
+  transition: all 0.3s ease-in-out;
+}
+
+main {
+  min-height: 90vh;
+  padding: 2em;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dark-mode {
+  background-color: var(--bg-dark);
+  color: var(--font-dark);
+
+  header {
+    background-color: var(--bg-dark);
+    filter: drop-shadow(0px 0px 2px var(--bg-light));
+  }
+
+  a {
+    color: var(--font-dark);
+  }
+
+  #logo {
+    filter: drop-shadow(0px 0px 5px var(--font-dark));
+  }
+
+  #search {
+    border-color: var(--bg-light);
+    &:focus {
+      filter: drop-shadow(0px 0px 5px var(--detail-color));
+    }
+  }
+
+  #notification {
+    filter: invert(1);
+  }
+
+  #ld-btn {
+    filter: invert(1);
+
+    &:active {
+      filter: invert(1) drop-shadow(0px 0px 10px var(--detail-color));
+    }
+  }
+
+  #load-btn {
+    color: var(--font-dark);
+  }
+
+  footer {
+    a {
+      color: var(--detail-color);
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

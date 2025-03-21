@@ -1,0 +1,136 @@
+@keyframes popNot {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+header {
+  align-items: center;
+  background-color: var(--bg-light);
+  display: flex;
+  filter: drop-shadow(0px 0px 10px var(--bg-dark));
+  justify-content: space-around;
+  height: 10vh;
+  min-width: 100%;
+  padding: 1em;
+  position: sticky;
+  top: 0;
+  transition: all 0.3s ease-in-out;
+  z-index: 1;
+
+  #logo {
+    filter: drop-shadow(-3px 3px 3px var(--font-light));
+    height: 50px;
+    width: 50px;
+  }
+
+  nav {
+    ul {
+      display: flex;
+      height: auto;
+      justify-content: space-around;
+      width: 15em;
+
+      li {
+        a {
+          color: var(--font-light);
+          display: inline-block;
+          font-weight: bold;
+          transition: all 0.2s ease-in-out;
+
+          &:hover {
+            color: var(--detail-color);
+            transform: scale(1.1);
+          }
+
+          &:focus {
+            color: var(--detail-color);
+            text-decoration: underline;
+            transform: scale(1);
+            filter: drop-shadow(0px 0px 10px var(--detail-color));
+          }
+
+          &:active {
+            color: var(--detail-color);
+            transform: scale(0.8);
+          }
+        }
+      }
+    }
+  }
+
+  #search {
+    border-radius: 10px;
+    border: 3px solid var(--font-light);
+    font-weight: 500;
+    height: auto;
+    padding: 1em;
+    transition: all 0.3s ease-in-out;
+    width: 50%;
+
+    &:focus {
+      border-color: var(--detail-color);
+      filter: drop-shadow(0px 0px 3px var(--font-light));
+      outline: none;
+    }
+  }
+
+  #icons {
+    width: 20%;
+    display: flex;
+    justify-content: space-around;
+
+    img {
+      cursor: pointer;
+      width: 25px;
+      height: 25px;
+    }
+
+    div {
+      position: relative;
+
+      transition: all 0.2s ease-in-out;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+
+      &:active {
+        transform: scale(0.8);
+        filter: drop-shadow(0px 0px 10px var(--detail-color));
+      }
+    }
+  }
+
+  #ld-btn {
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    &:active {
+      transform: scale(0.8);
+      filter: drop-shadow(0px 0px 10px var(--detail-color));
+    }
+  }
+  .buble {
+    animation: popNot 0.5s alternate infinite;
+    border-radius: 5px;
+    border: 5px solid var(--notification-color);
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+  }
+}
+
+@media (max-width: 950px) {
+  nav {
+    display: none;
+  }
+}

@@ -1,0 +1,22 @@
+#load-btn {
+    background-color: transparent;
+    border-radius: 50px;
+    border: 3px solid var(--detail-color);
+    color: var(--font-light);
+    font-weight: bold;
+    height: auto;
+    margin: 2em 1em 0em 1em;
+    min-width: 300px;
+    padding: 1em;
+
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+        box-shadow: 0px 0px 10px var(--detail-color);
+        transform: scale(1.1);
+    }
+
+    &:active{
+        transform: scale(0.9);
+    }
+}
